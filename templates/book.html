@@ -1,0 +1,253 @@
+<html>
+    <head>
+        <title>Car Rental </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+     
+    </head>
+    <body>
+    <style>
+    * {
+	margin:0;
+	padding:0;
+}
+body  {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background:#000000 url(images/pageBackground.jpg) no-repeat center top;
+	color: #ffffff;
+}
+a {
+	color:#ff9c00;
+	text-decoration:underline;
+}
+a:hover {
+	color:#ff9c00;
+	text-decoration:none;
+}
+#container { 
+	width: 100%; 
+} 
+#header {
+	width:100%; 
+}
+.logoBackground {
+	background:#000000;
+	width:300px;
+}
+.logo {
+	color:#ff9c00;
+	font-size:60px;
+	padding:10px 0 0 30px;
+}
+.author {
+	padding:0 0 10px 30px;
+	color:#707070;
+}
+.author a {
+	color:#707070;
+}
+.menu {
+	background:url(images/menuBackground.png) repeat-x left top;
+	height:103px;
+	text-align:center;
+	margin-top:265px;
+}
+.menu ul {
+	margin:0;
+	padding-top:32px;
+}
+.menu li {
+	list-style:none;
+	display:inline;
+	padding:20px 15px 0 15px;
+}
+.menu li a {
+	color:#ffffff;
+	font-size:24px;
+	text-decoration:none;
+}
+.menu li a:hover {
+	color:#ff9c00;
+	font-size:24px;
+	text-decoration:none;
+}
+.menu #active a {
+	color:#ff9c00;
+	font-size:24px;
+	text-decoration:none;
+}
+.allContent {
+	width:800px;
+	margin:0 auto;
+	padding:130px 0 0 0;
+}
+.leftContent p, .rightContent p {
+	padding:40px;
+}
+.leftContent {
+	float:left;
+	width:400px;
+	background:url(images/leftContent.png) repeat-y left top;
+}
+.rightContent {
+	margin-left:436px;
+	width:364px;
+	background:url(images/rightContent.png) repeat-y left top;
+} 
+.rightContent ul {
+	margin:0;
+	padding:0 40px;
+}
+.rightContent li {
+	list-style:none;
+	padding:0 0 20px 0;
+}
+#footer {
+	text-align:center;
+	color:#707070;
+	padding:30px 0;
+} 
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+    </style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CAR RENTALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/profile_index">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile_customer">Customers</a>
+        </li>
+		<li class="nav-item">
+			<a class="nav-link" href="/profile_cars">Cars</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link active" href="/profile_book">Book Car</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/profile_return">Return Car</a>
+		  </li>
+      </ul>
+      <form class="d-flex">
+        <a class="btn btn-outline-success" href="/" role="button">Log Out</a>
+      </form>
+    </div>
+  </div>
+  </nav>
+<div class="leftContent">
+    <b><form action="views.py" method="post" >
+		<h1> BOOK A CAR </h1><br><br>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Enter Customer ID:</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="ID" id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Enter Date:</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="yyyy-mm-dd" id="example-text-input">
+  </div>
+</div>
+Select Car type: <select name = "Ctype">
+<option>Compact</option>
+<option>Medium</option>
+<option>Large</option>
+<option>SUV</option>
+<option>Van</option>
+<option>Truck</option>
+</select><br><br>
+Rent type: <select name = "Rtype">
+<option>Daily</option>
+<option>Weekly</option>
+</select><br><br>
+No of days : <select name = "Days">
+<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
+</select><br><br>
+No of weeks : <select name = "Weeks">
+<option>0</option><option>1</option><option>2</option><option>3</option>
+</select><br><br>
+<button class="btn btn-outline-success" type="submit">Check Availablity</button><br><br>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Enter Vehicle ID:</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="" id="example-text-input">
+  </div>
+</div>
+<button class="btn btn-outline-success" type="submit">Book</button>
+</form></b>	
+
+<br>
+<b><form action="views.py" method="post" >
+		<h2> VIEW ACTIVE & SCHEDULED RENTALS </h2>
+		<button class="btn btn-outline-success" type="submit">View</button>
+</form></b>
+    </div>	
+	
+	
+<div class="rightContent">
+<SCRIPT LANGUAGE="JavaScript">
+
+var num=1
+img1 = new Image ()
+img1.src = "https://images.unsplash.com/photo-1602442005323-3183bb419034?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+img2 = new Image ()
+img2.src = "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+img3 = new Image ()
+img3.src = "https://images.unsplash.com/photo-1592840062661-a5a7f78e2056?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80"
+img4 = new Image ()
+img4.src = "https://images.unsplash.com/photo-1589539027938-35266cbbf280?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" 
+img5 = new Image ()
+img5.src = "https://images.unsplash.com/photo-1599575654473-4d9a1b766975?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+img6 = new Image ()
+img6.src = "https://images.unsplash.com/photo-1575090536203-2a6193126514?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80" 
+
+text1 = "MEDIUM"
+text2 = "S.U.V"
+text3 = "COMPACT"
+text4 = "LARGE"
+text5 = "TRUCK"
+text6 = "VAN"
+
+function slideshowUp()
+{
+num=num+1
+if (num==7)
+{num=1}
+document.mypic.src=eval("img"+num+".src")
+document.raj.iname.value=eval("text"+num)
+}
+
+function slideshowBack()
+{
+num=num-1
+if (num==0)
+{num=6}
+document.mypic.src=eval("img"+num+".src")
+document.raj.iname.value=eval("text"+num)
+}
+
+</SCRIPT>
+<!-- The Image and Form Codes are Below --> 
+<CENTER>
+<IMG SRC="templates/1.jpg" NAME="mypic" BORDER=0 HEIGHT="380" WIDTH="500">
+<FORM NAME="raj">
+<INPUT TYPE="text" WIDTH="100" NAME="iname" VALUE="Medium">
+</FORM><A HREF="JavaScript:slideshowBack()" class="btn btn-outline-success"> Back</A>  <A HREF="JavaScript:slideshowUp()" class="btn btn-outline-success"> Next</A> 
+
+
+	</div>
+	
+	</body>
+	</html>

@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.login{
+    position:absolute;top:5px;right:30px;
+    padding: 5px;
+}
+.sign_up{
+    position:absolute;top:5px;right:5px;
+    padding: 5px;
+}
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.description{
+    text-align: center;
+}
+.review1{
+    text-align: center;
+    padding: 10px;
+}
+.review2{
+    text-align: center;
+    padding: 10px;
+}
+.review3{
+    text-align: center;
+    padding: 10px;
+}
+.img1{
+    padding: 10px;
+    size: 200px 100px;
+}
+.img2{
+    padding: 10px;
+}
+.img3{
+    padding: 10px;
+}
+.img4{
+    padding: 10px;
+}

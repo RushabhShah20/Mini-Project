@@ -1,0 +1,18 @@
+h3{
+    padding-top: 10%;
+    text-align: center;
+}
+form{
+    padding-top: 10%;
+    text-align: center;
+}
+input[type="text"],
+input[type="password"],
+textarea{
+    width:40%
+}
+
+input[type="submit"]{
+    background-color: blue;
+    color: white;
+}
